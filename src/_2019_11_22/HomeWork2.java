@@ -63,7 +63,7 @@ public class HomeWork2 {
  
         for (int i = 2; i <= 100; i++) // 1은 소수가 아니므로 2부터 시작
         {
-            for (int j = 2; j <= i; j++) {
+            for (int j = 2; j <= i; j++) { //2,3,4,5,
                 if (i % j == 0) {
                     pri++;
                 }

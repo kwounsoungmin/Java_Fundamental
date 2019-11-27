@@ -7,10 +7,35 @@ public class CalenderDemo {
 	private int totalCount;
 	static int monthArr[] = { 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
 
+
+
 	public void set(int y, int m, int d) {
 		year = y;
 		month = m;
 		day = d;
+		
+		 public CalenderDemo(){
+		 
+		 }
+		 
+		//생성자 만들기 다양한 모양 생성자는클래스 모양과 동일한 이름을 가지고 반환값이 없다.
+public CalenderDemo(int y,){
+       // year = y;
+        
+        
+		
+}
+public CalenderDemo(int y,int m){
+        year = y;
+		month = m;
+		
+}
+public CalenderDemo(int y,int m,int d){
+        year = y;
+		month = m;
+		day = d;
+}
+
 
 	}
 
@@ -64,7 +89,7 @@ public class CalenderDemo {
 //메인에는 로직을 넣지 말자 실행문만넣자  로직들을 분리하는 실력을 키우자
 	public static void main(String[] args) {
 		CalenderDemo c = new CalenderDemo();
-		c.set(2019, 12, 25);
+	//	c.set(2019, 12, 25);
 		c.getTotalCount();
 		//c.print();
 	}
