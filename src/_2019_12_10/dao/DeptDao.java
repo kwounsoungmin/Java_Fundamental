@@ -14,7 +14,7 @@ public class DeptDao {
 	// forName이 스테틱 메서드 니까 스테틱 초기화 하는게 제일 이뻐
 	static {
 		try {
-			Class.forName("org.mariadb.jdbc.Driver"); // 드라이버클래스를 동적으로 올려두는작업을함.
+			Class.forName("org.mariadb.jdbc.Driver"); // 드라이버클래스를 동적으로 올려두는작업을함. 메모리로드라는 클래스에 스테틱변수를 쫙올려만두고 객체생성은 아님 
 														// 문자열로들어있는크랠스를 메모리에 올려줌
 														// 이게 forname
 			// "org.mariadb.jdbc.Driver" 이드라이브 파일을 메모리에 로딩시켜주는작업 (드라이버가클래스)
@@ -31,6 +31,8 @@ public class DeptDao {
 	private static DeptDao single; // 자기자신타입으로 자기자신선언
 
 	private DeptDao() {
+		//new org.mariadb.jdbc.Drive();
+		//스테틱 초기화를안하면 위코드를 생성자에 넣어둔다.
 	}
 
 	public static DeptDao getInstance() { // 생성자를 프라이빗으로 두고
