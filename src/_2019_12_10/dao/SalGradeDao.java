@@ -199,10 +199,10 @@ public class SalGradeDao {
 
 				while (rs.next()) {
 					int index = 0;
-					int deptno = rs.getInt(++index);
-					String dname = rs.getString(++index);
-					String loc = rs.getString(++index);
-				//list.add(new SalGradeDTO(grade, losal, hisal));	-> 여기부터
+					int grade = rs.getInt(++index);
+					int losal = rs.getInt(++index);
+					int hisal = rs.getInt(++index);
+				list.add(new SalGradeDTO(grade, losal, hisal));
 
 				}
 
@@ -231,9 +231,9 @@ public class SalGradeDao {
 			return list;
 		}
 
-		public DeptDTO select(int deptNo) { // 프라이머리 키로 로 하나만 가져 오는것 널이면 데이터 없다 널아니면
+		public SalGradeDTO select(int grade) { 
 											// 값 보냄
-			DeptDTO dto = null; // 생성자로 뉴할려고하는것
+			SalGradeDTO dto = null; // 생성자로 뉴할려고하는것
 			Connection con = null; // 닫을 목적으로 밖에 선언
 			PreparedStatement pstmt = null;// sql문 전송용도
 			ResultSet rs = null; // 커서맨위로 ResultSet
@@ -243,24 +243,24 @@ public class SalGradeDao {
 						"acorn12", // user
 						"acorn12"// password
 				);
-				System.out.println("데이터 베이스에 연결을 성공했어요.");
+				
 				StringBuffer sql = new StringBuffer();
-				sql.append("SELECT DEPTNO , DNAME, LOC ");
-				sql.append("FROM DEPT ");
-				sql.append("where deptno =? ");
+				sql.append("SELECT GRADE , LOSAL, HISAL ");
+				sql.append("FROM SALGRADE ");
+				sql.append("where GRADE =? ");
 
 				pstmt = con.prepareStatement(sql.toString());
 
 				int index = 0;
-				pstmt.setInt(++index, deptNo);
+				pstmt.setInt(++index, grade);
 				rs = pstmt.executeQuery(); // select 문일때 전송하는메소드
 
 				if (rs.next()) {
 					index = 0;
-					int deptno = rs.getInt(++index);
-					String dname = rs.getString(++index);
-					String loc = rs.getString(++index);
-					dto = new DeptDTO(deptno, dname, loc);
+					int Grade = rs.getInt(++index);
+					int losal = rs.getInt(++index);
+					int hisal = rs.getInt(++index);
+					dto = new SalGradeDTO(grade, losal, hisal);
 
 				}
 
@@ -290,4 +290,3 @@ public class SalGradeDao {
 		}
 
 	}
-}
