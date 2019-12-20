@@ -1,4 +1,4 @@
-/*package _2019_11_25;
+package _2019_11_25;
 
 public class CalenderDemo {
 	private int year;
@@ -94,4 +94,3 @@ public CalenderDemo(int y,int m,int d){
 		//c.print();
 	}
 }
-*/
