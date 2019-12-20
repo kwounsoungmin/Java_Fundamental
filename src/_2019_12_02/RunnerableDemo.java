@@ -1,4 +1,4 @@
-/*package _2019_12_02;
+package _2019_12_02;
 
 public class RunnerableDemo implements Runnable {
 	// 추상메소드이기에 ㅂ반드시 런메소드 오버라이딩해주자 run쓰고 ctrl +sapce
@@ -29,4 +29,3 @@ public class RunnerableDemo implements Runnable {
 
 	}
 }
-*/
