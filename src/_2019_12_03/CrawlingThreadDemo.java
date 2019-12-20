@@ -1,4 +1,4 @@
-/*package _2019_12_03;
+package _2019_12_03;
 
 public class CrawlingThreadDemo {
 public static void main(String[] args) {
@@ -6,4 +6,3 @@ public static void main(String[] args) {
 	c1.start();
 }
 }
-*/
