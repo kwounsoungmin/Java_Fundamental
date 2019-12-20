@@ -1,4 +1,4 @@
-/*package _2019_12_03;
+package _2019_12_03;
 
 import java.io.BufferedWriter;
 import java.io.FileWriter;
@@ -98,4 +98,3 @@ public class CrawlingThread extends Thread {
 	}
 
 
-*/
